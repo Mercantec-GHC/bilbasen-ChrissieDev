@@ -1,6 +1,4 @@
 ﻿using DomainModels;
-using System.Collections.Generic;
-
 namespace Bilbasen
 {
     internal class Program
