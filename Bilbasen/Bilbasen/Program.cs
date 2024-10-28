@@ -5,6 +5,7 @@ namespace Bilbasen
     {
         static void Main(string[] args)
         {
+            // creates a list for cars with specific specs, which can be added to.
             List<Car> carInventory = new List<Car>
             {
 
@@ -145,13 +146,13 @@ namespace Bilbasen
                 new Car("Lexus", "LS", 2021, 67890, "Blue", "Hybrid", 9900, "Luxury"),
                 new Car("Genesis", "G90", 2022, 23456, "Silver", "Gasoline", 10000, "Luxury")
             };
-
-            Console.WriteLine("Enter the attribute to filter by (Brand, Model, Year, Mileage, Color, FuelType, Weight, CarType):");
+            // makes the user input criteria
+            Console.WriteLine("Enter your filter criteria and stuff, like brand, fuel type, type of class like Luxury, mileage, color.");
             string attribute = Console.ReadLine();
 
-            Console.WriteLine("Enter the value to filter by:");
+            Console.WriteLine("Enter the thing to filter by.");
             string value = Console.ReadLine();
-
+            // matches the user input with the car inventory, and sets it with PrintCarDetails.
             foreach (var car in carInventory)
             {
                 if (IsMatch(car, attribute, value))
@@ -160,9 +161,10 @@ namespace Bilbasen
                 }
             }
         }
-
+        // define ismatch and checks if 'car' matches anything asked by the user input
         static bool IsMatch(Car car, string attribute, string value)
         {
+            // just removes case sensitive stuff
             switch (attribute.ToLower())
             {
                 case "brand":
@@ -185,7 +187,7 @@ namespace Bilbasen
                     return false;
             }
         }
-
+        // prints the actual details of the car specified by user.
         static void PrintCarDetails(Car car)
         {
             Console.WriteLine($"Brand: {car.GetBrand()}");
