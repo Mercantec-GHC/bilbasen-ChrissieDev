@@ -3,10 +3,11 @@ namespace Bilbasen
 {
     internal class Program
     {
+        //testcomment
         static void Main(string[] args)
         {
             // creates a list for cars with specific specs, which can be added to.
-            List<Car> carInventory = new List<Car>
+            List<Car> carInventory = new()
             {
 
                 new Car("Ford", "Mustang", 1963, 123456, "Red", "Gasoline", 1500, "Coupe"),
